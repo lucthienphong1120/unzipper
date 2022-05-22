@@ -1,14 +1,16 @@
 <?php
 /**
- * File Unzipper extracts .zip or .rar archives and .gz files on webservers.
+ * The Unzipper extracts .zip or .rar archives and .gz files on webservers.
  * It's handy if you do not have shell access. E.g. if you want to upload a lot
  * of files (php framework or image collection) as an archive to save time.
- * It also supports creating archives.
+ * As of version 0.1.0 it also supports creating archives.
  *
- * @author  Luc Thien Phong
+ * @author  Andreas Tasch, at[tec], attec.at
  * @license GNU GPL v3
  * @package attec.toolbox
+ * @version 0.1.1
  */
+define('VERSION', '0.1.1');
 
 $timestart = microtime(TRUE);
 $GLOBALS['status'] = array();
@@ -301,7 +303,7 @@ class Zipper {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>File Unzipper</title>
+  <title>File Unzipper + Zipper</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <style type="text/css">
     <!--
@@ -353,6 +355,10 @@ class Zipper {
       font-weight: normal;
     }
 
+    .version {
+      font-size: 80%;
+    }
+
     .form-field {
       border: 1px solid #AAA;
       padding: 8px;
@@ -389,7 +395,7 @@ class Zipper {
 </p>
 <form action="" method="POST">
   <fieldset>
-    <h1>Extract File</h1>
+    <h1>Archive Unzipper</h1>
     <label for="zipfile">Select .zip or .rar archive or .gz file you want to extract:</label>
     <select name="zipfile" size="1" class="select">
       <?php foreach ($unzipper->zipfiles as $zip) {
@@ -404,12 +410,13 @@ class Zipper {
   </fieldset>
 
   <fieldset>
-    <h1>Archive File</h1>
-    <label for="zippath">Path that should be archive (optional):</label>
+    <h1>Archive Zipper</h1>
+    <label for="zippath">Path that should be zipped (optional):</label>
     <input type="text" name="zippath" class="form-field" />
     <p class="info">Enter path to be zipped without leading or trailing slashes (e.g. "zippath"). If left empty current directory will be used.</p>
     <input type="submit" name="dozip" class="submit" value="Zip Archive"/>
   </fieldset>
 </form>
+<p class="version">Unzipper version: <?php echo VERSION; ?></p>
 </body>
 </html>
