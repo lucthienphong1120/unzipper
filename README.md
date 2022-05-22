@@ -1,11 +1,10 @@
-# File Unzipper
+# The Unzipper
 
-The File Unzipper extracts .zip and .rar archives or .gz/tar.gz files on webservers. It detects .zip/.rar/.tar.gz/.gz archives and let you choose which one to extract (if there are multiple archives available).
-It also supports creating archives.
+The Unzipper extracts .zip and .rar archives or .gz/tar.gz files on webservers. It detects .zip/.rar/.tar.gz/.gz archives and let you choose which one to extract (if there are multiple archives available).
+As of version 0.1.0 it also supports creating archives.
 
 It's handy if you do not have shell access. E.g. if you want to upload a lot of files (php framework or image collection) as archive - because it is much faster than uploading each file by itself.
 
-use to compress and extract your resources if the hosting you are using does not support it
 
 ## Requirements    
 PHP 5.3 and newer
@@ -14,7 +13,7 @@ PHP 5.3 and newer
 
 ## Usage
 * Download unzipper.php and place it in the same directory as your .zip archive.
-* In Browser type URL to your-url/unzip.php
+* In Browser type URL to unzipper.php
 
 ### Archive unzipper
 * Choose .zip, .rar archive or .gz file you want to extract
@@ -25,8 +24,13 @@ PHP 5.3 and newer
 * (Optional) Set path to zip, defaults to current directory
 * Click "Zip Archive"
 
+## Version
+Beta version state, use at you own risk.
+
+
 ## License
 Released under GNU/GPL v3
 
+
 ## Screenshot   
-![Screenshot of unzipper](demo.png)
+
